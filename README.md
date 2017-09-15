@@ -7,7 +7,7 @@ It is a command-line tool which imitates the well-known ping program but tlping 
 ## How to install it ?
 
 1. Unzip the archive
-2. Copy-Paste tlping.exe in "C:\Users\<your windows username>\"
+2. Copy-Paste tlping.exe in "C:\Users\(your windows username>)"
 
 ## How to use it ?
 
