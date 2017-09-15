@@ -13,6 +13,10 @@
 
 extern argSt prgmArguments;
 
+/*
+* Procedure :	displayHelp
+*				Display arguments and how to use the program
+*/
 void displayHelp() {
 	printf("====== How to use this program (tlping) ======\n");
 	printf("tlping [-h display the help (what you currently read)]\n[-c=<count> number of ping to execute]\n");
@@ -21,15 +25,19 @@ void displayHelp() {
 	printf("[-t=<time in millisecond> timeout (if no response is received after\nthis time elapsed, tlping stops)]\n");
 }
 
+/*
+* Procedure :	createRandomPayload
+*				Generate a random string
+* Parameters :	(char*) payload : an empty string
+*/
 void createRandomPayload(char* payload) {
 	srand(time(NULL));
 
 	char charset[] = "0123456789"
 		"abcdefghijklmnopqrstuvwxyz"
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	int sizePayload = prgmArguments.payloadSize;
 
-	for (int j = 0; j < sizePayload; j++) {
+	for (int j = 0; j < prgmArguments.payloadSize; j++) {
 		size_t i = (double)rand() / RAND_MAX * (sizeof charset - 1);
 		payload[j] = charset[i];
 	}

@@ -18,6 +18,16 @@
 
 extern argSt prgmArguments;
 
+/*
+* Procedure :	launchPing
+*				Execute a single ping (send & recv data + compute latency)
+* Parameters :	(double*) delay : latency in milliseconds
+*				(int*) count : Number of pings to execute
+*				(double*) min : Minimum latency
+*				(double*) max : Maximum latency
+*				(int*) lostBytes : Number of bytes lost during pings
+*				(int*) failedExchange : Number of failed data exchanges/pings
+*/
 void launchPing(double *delay, int *count, double *min, double *max, int *lostBytes, int *failedExchange) {
 	
 	// STRUCTURES	
@@ -91,7 +101,7 @@ void launchPing(double *delay, int *count, double *min, double *max, int *lostBy
 
 	// Closing Socket
 	if (closesocket(IdSocket) < 0) {
-		perror("sendto()");
+		perror("closesocket()");
 		exit(errno);
 	}
 
@@ -120,7 +130,7 @@ void launchPing(double *delay, int *count, double *min, double *max, int *lostBy
 		receivedBytes = 0;
 	}else{
 		printf("Response from %s: count=%d time=%f ms\n", prgmArguments.ipAddress, *count + 1, latency);
-		printf("Received Bytes=%d / Sent Bytes=%d\n", receivedBytes, sentBytes);
+		printf("Received=%d / Sent=%d\n", receivedBytes, sentBytes);
 	}
 
 	(*lostBytes) = (*lostBytes) + (sentBytes - receivedBytes);

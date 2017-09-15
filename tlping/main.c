@@ -18,11 +18,12 @@
 
 extern argSt prgmArguments;
 
-/**
-* Function:  main
-*            Perform a data exchange with the Echo service and compute latency (average, min and max) (PING)
-*
-* Returns:   0
+/*
+* Function:		main
+*				Perform a data exchange with the Echo service and compute latency (average, min and max) (PING)
+* Parameters:	(int) argc : number of arguments
+*				(char**) argv : array of arguments (=strings)
+* Returns: 0
 */
 int main(int argc, char* argv[]) {
 	double delay = 0; // Latency between each data exchange, it stores the sum of all the latencies of each ping

@@ -21,6 +21,12 @@ argSt prgmArguments = {
 	.interval = 1000 // in milliseconds
 };
 
+/*
+* Procedure :	processArguments
+*				Parse arguments into useful and reusable data
+* Parameters :	(int) argc : number of arguments
+*				(char**) argv : array of arguments (=strings)
+*/
 void processArguments(int argc, char* argv[]) {
 
 	int errorArgument = 0;
