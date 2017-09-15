@@ -121,9 +121,10 @@ void launchPing(double *delay, int *count, double *min, double *max, int *lostBy
 	
 	if (receivedBytes != -1) {
 		printf("Response from %s: count=%d time=%f ms\n", prgmArguments.ipAddress, *count + 1, latency);
+		printf("Received Bytes=%d / Sent Bytes=%d\n", receivedBytes, sentBytes);
 	}
 
-	printf("Received Bytes=%d / Send Bytes=%d\n", receivedBytes, sentBytes);
+	
 
 	// Free memory to avoid memory leaks
 	free(payload);
