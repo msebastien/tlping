@@ -41,7 +41,7 @@ int main(int argc, char* argv[]) {
 	} while (count < prgmArguments.count); // Necessary condition in order to execute as many as pings requested by the user
 
 	// STATISTICS DISPLAYED AFTER PINGS
-	averageLatency = delay / prgmArguments.count;//calcul de la latence moyenne
+	averageLatency = delay / prgmArguments.count;
 
 	printf("\n=== STATISTICS ===\n");
 	printf("Average latency=%fms Min Latency=%fms Max Latency= %fms\n", averageLatency, minLatency, maxLatency);

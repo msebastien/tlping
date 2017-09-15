@@ -116,15 +116,14 @@ void launchPing(double *delay, int *count, double *min, double *max, int *lostBy
 	}
 
 	// Number of bytes during pings
-	(*lostBytes) = (*lostBytes) + (sentBytes - receivedBytes);
-
-	
-	if (receivedBytes != -1) {
+	if (receivedBytes == -1) {
+		receivedBytes = 0;
+	}else{
 		printf("Response from %s: count=%d time=%f ms\n", prgmArguments.ipAddress, *count + 1, latency);
 		printf("Received Bytes=%d / Sent Bytes=%d\n", receivedBytes, sentBytes);
 	}
 
-	
+	(*lostBytes) = (*lostBytes) + (sentBytes - receivedBytes);
 
 	// Free memory to avoid memory leaks
 	free(payload);
