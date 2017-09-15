@@ -71,7 +71,7 @@ void launchPing(double *delay, int *count, double *min, double *max, int *lostBy
 	startTime = getCurrentTime();
 
 	if (sentBytes == -1) {
-		printf("sendto() : Impossible to reach target (count=%d)\n", *count);
+		printf("[FAILURE] Impossible to reach target (count=%d)\n", *count +1);
 		*failedExchange += 1;
 
 	}
@@ -82,7 +82,7 @@ void launchPing(double *delay, int *count, double *min, double *max, int *lostBy
 		if (receivedBytes == -1)
 		{
 			*failedExchange += 1;
-			printf("recvfrom() : Data reception has failed (count=%d)\n", *count);
+			printf("[FAILURE] Data reception has failed (count=%d)\n", *count +1);
 
 		}
 	}
