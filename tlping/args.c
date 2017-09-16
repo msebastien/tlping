@@ -25,7 +25,7 @@ argSt prgmArguments = {
 * Procedure :	processArguments
 *				Parse arguments into useful and reusable data
 * Parameters :	(int) argc : number of arguments
-*				(char**) argv : array of arguments (=strings)
+*				(char**) argv : array of arguments which are strings
 */
 void processArguments(int argc, char* argv[]) {
 
