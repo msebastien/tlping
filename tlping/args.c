@@ -42,7 +42,7 @@ void processArguments(int argc, char* argv[]) {
 				break;
 
 			case 't':
-				prgmArguments.timeout = atoi(&argv[i][3]); // If no response is received after this specified time, the program automatically stops.
+				prgmArguments.timeout = atoi(&argv[i][3]); // If no response is received after this specified time, the program stops waiting for a response.
 				break;
 
 			case 'c':
