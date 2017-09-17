@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
 	do {
 		launchPing(&delay, &count, &minLatency, &maxLatency, &lostBytes, &failedExchange); // Function which sends and receive data, it also computes various stats 
 		count++; 
-		Sleep(prgmArguments.interval); // Wait before the next loop
+		Sleep(prgmArguments.interval * 1000); // Wait before the next loop
 	} while (count < prgmArguments.count); // Necessary condition in order to execute as many as pings requested by the user
 
 	// STATISTICS DISPLAYED AFTER PINGS

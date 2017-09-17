@@ -16,7 +16,7 @@
 argSt prgmArguments = {
 	.ipAddress = NULL,
 	.payloadSize = 100,
-	.timeout = 5, // in seconds
+	.timeout = 5000, // in milliseconds
 	.count = 5,
 	.interval = 1000 // in milliseconds
 };
