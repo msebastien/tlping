@@ -18,7 +18,7 @@ argSt prgmArguments = {
 	.payloadSize = 100,
 	.timeout = 5000, // in milliseconds
 	.count = 5,
-	.interval = 1000 // in milliseconds
+	.interval = 1 // in seconds
 };
 
 /*
